@@ -1,0 +1,16 @@
+/* 画像とフェード */
+.float_text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.title_font_size {
+	font-size: 144px;
+	/* 改行させない */
+}
+
+.not_wrap {
+	white-space: nowrap;
+}

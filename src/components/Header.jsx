@@ -23,7 +23,7 @@ export const Header = (props) => {
 			<div>
 				{user ? (
 					<div>
-						<nav className="flex flex-wrap items-center justify-between p-6 bg-black">
+						<nav className="flex flex-wrap items-center justify-between p-6 bg-gray-800">
 							<div className="flex items-center flex-shrink-0 mr-6 text-white">
 								<Link to="/">
 									<span className="text-xl font-semibold tracking-tight">Dream Share</span>
@@ -57,23 +57,7 @@ export const Header = (props) => {
 										to="/create"
 										className="block mt-4 mr-4 text-gray-200 lg:inline-block lg:mt-0 hover:text-white"
 									>
-										{/* <div className="flex items-end flex-shrink-0 mr-6 "> */}
-										{/* <svg
-												xmlns="http://www.w3.org/2000/svg"
-												class="h-6 w-6"
-												fill="none"
-												viewBox="0 0 24 24"
-												stroke="currentColor"
-												stroke-width="2"
-											>
-												<path
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-												/>
-											</svg> */}
 										Create
-										{/* </div> */}
 									</Link>
 								</div>
 								<div>
@@ -90,15 +74,16 @@ export const Header = (props) => {
 					</div>
 				) : (
 					<div>
-						<nav className="flex flex-wrap items-center justify-between p-6 bg-black">
+						<nav className="flex flex-wrap items-center justify-between p-6 bg-gray-800">
 							<div className="flex items-center flex-shrink-0 mr-6 text-white">
-								<span className="text-xl font-semibold tracking-tight">Dream Share</span>
+								<Link to="/">
+									<span className="text-xl font-semibold tracking-tight">Dream Share</span>
+								</Link>
 							</div>
 							<div className="flex-grow block w-full lg:flex lg:items-center lg:w-auto">
 								<div className="text-sm lg:flex-grow"></div>
 								<div>
 									<button
-										to="/"
 										onClick={() => GoogleLogin()}
 										className="inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded hover:border-transparent hover:text-black hover:bg-white lg:mt-0"
 									>

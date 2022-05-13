@@ -3,7 +3,6 @@ import firebase from "./firebase";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Header } from "./Header";
-import { Top } from "./Top/Top";
 import { Main } from "./Main/Main";
 import { Home } from "./Home/Home";
 import { Create } from "./Create/Create";
@@ -22,7 +21,7 @@ export const Routers = () => {
 		<BrowserRouter>
 			<Header user={user} />
 			<Routes>
-				<Route path="/" element={user ? <Main user={user} /> : <Top />}></Route>
+				<Route path="/" element={<Main user={user} />}></Route>
 				<Route path="/home" element={<Home user={user} />}></Route>
 				<Route path="/create" element={<Create user={user} />}></Route>
 			</Routes>
