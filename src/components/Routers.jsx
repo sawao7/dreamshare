@@ -19,7 +19,9 @@ export const Routers = () => {
 
 	return (
 		<BrowserRouter>
-			<Header user={user} />
+			<div className="sticky top-0 z-50">
+				<Header user={user} />
+			</div>
 			<Routes>
 				<Route path="/" element={<Main user={user} />}></Route>
 				<Route path="/home" element={<Home user={user} />}></Route>

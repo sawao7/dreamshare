@@ -10,7 +10,7 @@ import Picture_3 from "../../Images/picture_3.jpeg";
 import Movie from "../../Movies/Produce1.mp4";
 
 export const Main = (props) => {
-	const user = props.user;
+	// const user = props.user;
 	const videoRef = React.useRef(null);
 	const position = useScroll();
 	console.log(position);
