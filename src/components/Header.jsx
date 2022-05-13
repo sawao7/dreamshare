@@ -1,9 +1,10 @@
 import React from "react";
 
-export const Header = () => {
+export const Header = (props) => {
+	const user = props.user;
 	return (
 		<div>
-			<div>heeadere</div>
+			<div>{user ? <div>ログイン済み</div> : <div>ログインして</div>}</div>
 		</div>
 	);
 };
