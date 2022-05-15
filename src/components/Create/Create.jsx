@@ -4,6 +4,7 @@ import React from "react";
 // 文字の送信、画像の表示
 export const Create = (props) => {
 	const user = props.user;
+	const url = "http://127.0.0.1:8000/";
 	const [text, setText] = React.useState();
 	const [image, setImage] = React.useState();
 
@@ -12,15 +13,15 @@ export const Create = (props) => {
 	};
 
 	const SubmitText = () => {
-		console.log(text);
-		setText("");
+		// console.log(text);
 		axios
-			.get("https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png", {
-				responseType: "blob",
+			.post(url + "post", {
+				strings: text,
 			})
 			.then((res) => {
-				setImage([URL.createObjectURL(res.data)]);
+				console.log("responce => " + res.data);
 			});
+		setText("");
 	};
 
 	return (
