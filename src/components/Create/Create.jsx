@@ -6,7 +6,7 @@ export const Create = (props) => {
 	const user = props.user;
 	const url = "http://127.0.0.1:8000/";
 	const [text, setText] = React.useState();
-	const [image, setImage] = React.useState();
+	const [imageURL, setImageURL] = React.useState();
 
 	const GetInputText = (e) => {
 		setText(e.target.value);
@@ -15,11 +15,12 @@ export const Create = (props) => {
 	const SubmitText = () => {
 		// console.log(text);
 		axios
-			.post(url + "post", {
+			.post(url + "deepai", {
 				strings: text,
 			})
 			.then((res) => {
-				console.log("responce => " + res.data);
+				console.log(res.data);
+				setImageURL(res.data.output_url);
 			});
 		setText("");
 	};
@@ -34,7 +35,7 @@ export const Create = (props) => {
 				</button>
 			</div>
 			{/* 画像表示 */}
-			{image ? <img src={image} alt="text" className="" /> : "text"}
+			{imageURL ? <img src={imageURL} alt="text" className="" /> : "no image"}
 		</div>
 	);
 };
