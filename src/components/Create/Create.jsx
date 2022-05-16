@@ -4,7 +4,9 @@ import React from "react";
 // 文字の送信、画像の表示
 export const Create = (props) => {
 	const user = props.user;
-	const url = "http://127.0.0.1:8000/";
+	// const url = "http://127.0.0.1:8000/";
+	const url = "https://fastapi-for-test.herokuapp.com/";
+
 	const [text, setText] = React.useState();
 	const [imageURL, setImageURL] = React.useState();
 
