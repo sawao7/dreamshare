@@ -1,0 +1,43 @@
+.big_height {
+	height: 712px;
+}
+
+.bubble7 {
+	position: relative;
+	display: inline-block;
+	margin: 1.5em 0 0 40px;
+	padding: 17px 10px;
+	min-width: 200px;
+	max-width: 100%;
+	background: #1a62bc;
+	font-size: 16px;
+	border-radius: 10px;
+}
+/* 円アイコン1 */
+.bubble7:before {
+	content: "";
+	position: absolute;
+	left: -38px;
+	width: 13px;
+	height: 12px;
+	bottom: 0;
+	background: #1a62bc;
+	border-radius: 50%;
+}
+/* 円アイコン2 */
+.bubble7:after {
+	content: "";
+	position: absolute;
+	left: -24px;
+	width: 20px;
+	height: 18px;
+	bottom: 3px;
+	background: #1a62bc;
+	border-radius: 50%;
+}
+.bubble7 p {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #fff;
+}
