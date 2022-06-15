@@ -19,7 +19,7 @@ export const Create = (props) => {
 	};
 
 	const SubmitText = () => {
-		setFlag(!flag);
+		setFlag((flag) => !flag);
 		// console.log(text);
 		axios
 			.post(url + "deepai", {
@@ -40,6 +40,12 @@ export const Create = (props) => {
 					value={text}
 					placeholder="What was your dream?"
 					className="block w-2/3 h-32 p-10 mx-auto text-5xl italic font-bold text-white bg-black border-4 border-yellow-300 rounded-lg "
+					onKeyPress={(e) => {
+						if (e.key === "Enter") {
+							SubmitText();
+						}
+					}}
+					autoFocus={true}
 				></input>
 				<div className="block w-8 h-8 mt-3 ml-56 bg-yellow-400 rounded-full"></div>
 				<div className="block w-8 h-8 mt-3 bg-yellow-400 rounded-full ml-52"></div>
@@ -61,17 +67,19 @@ export const Create = (props) => {
 			</div>
 			{/* 画像表示 */}
 			{flag ? (
-				<div class="border border-blue-300 shadow rounded-md p-4 max-w-sm w-1/2 mx-auto fixed top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 h-1/3">
-					<div class="animate-pulse flex space-x-4">
-						<div class="rounded-full bg-slate-700 h-10 w-10"></div>
-						<div class="flex-1 space-y-6 py-1">
-							<div class="h-2 bg-slate-700 rounded"></div>
-							<div class="space-y-3">
-								<div class="grid grid-cols-3 gap-4">
-									<div class="h-2 bg-slate-700 rounded col-span-2"></div>
-									<div class="h-2 bg-slate-700 rounded col-span-1"></div>
-								</div>
+				<div>
+					<div class="border border-blue-300 shadow rounded-md p-8 max-w-sm w-full mx-auto fixed top-2/3 right-1/2 translate-x-1/2 -translate-y-1/2 h-1/2 ">
+						<div class="animate-pulse flex space-x-4">
+							<div class="rounded-full bg-slate-700 h-20 w-20"></div>
+							<div class="flex-1 space-y-6 py-1">
 								<div class="h-2 bg-slate-700 rounded"></div>
+								<div class="space-y-3">
+									<div class="grid grid-cols-3 gap-4">
+										<div class="h-2 bg-slate-700 rounded col-span-2"></div>
+										<div class="h-2 bg-slate-700 rounded col-span-1"></div>
+									</div>
+									<div class="h-2 bg-slate-700 rounded"></div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -79,7 +87,17 @@ export const Create = (props) => {
 			) : (
 				<div></div>
 			)}
-			<div>{imageURL ? <img src={imageURL} alt="text" className="" /> : "no image"}</div>
+			<div>
+				{imageURL ? (
+					<img
+						src={imageURL}
+						alt="text"
+						className="fixed w-1/4 translate-x-1/2 -translate-y-1/2 top-2/3 right-1/2"
+					/>
+				) : (
+					<div></div>
+				)}
+			</div>
 		</div>
 	);
 };
