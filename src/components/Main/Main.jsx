@@ -17,7 +17,7 @@ export const Main = (props) => {
 	return (
 		// <div className={user ? "bg-black" : "bg-white"}>
 		<div className="bg-black">
-			<div className="relative w-1/1">
+			<div className="relative pt-0 pb-48 w-1/1">
 				{/* <Zoom when={position < 80} collapse> */}
 				<Zoom>
 					<img src={Pencil} alt="" className="block mx-auto" />
@@ -26,11 +26,11 @@ export const Main = (props) => {
 					Dream Share
 				</p>
 			</div>
-			<div className="relative">
+			{/* <div className="relative">
 				<p className="font-extrabold text-transparent float_text text-7xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 not_wrap">
 					鮮やかに踊るパワー
 				</p>
-			</div>
+			</div> */}
 			{/* video auto play */}
 			<div className="bg-white">
 				<video ref={videoRef} muted autoPlay loop className="w-full">
@@ -39,7 +39,7 @@ export const Main = (props) => {
 			</div>
 			{/* 画面白に変える */}
 
-			<div className="bg-white h-96">
+			{/* <div className="bg-white h-96">
 				<p>すみずみまで美しい。 オールスクリーンの デザイン。</p>
 				<div>
 					<p>
@@ -53,7 +53,7 @@ export const Main = (props) => {
 						<img src={Picture_3} alt="" />
 					</Zoom>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };
